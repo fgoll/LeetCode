@@ -36,7 +36,6 @@ var threeSum = function (nums) {
   let result = []
   for (let i = 0; i < nums.length - 2; i++) {
     if (i > 0 && nums[i] === nums[i - 1]) continue
-    console.log(i)
     for (let j = i + 1; j < nums.length; j++) {
       let a = nums[i]
       let b = nums[j]
