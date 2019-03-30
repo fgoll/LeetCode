@@ -54,17 +54,16 @@ var uniquePaths2 = function(m, n) {
     dp.push([])
   }
 
-  for (let i = 0; i < n; i ++) {
-    dp[0][i] = 1
-  }
   for (let i = 0; i < m; i ++) {
-    dp[i][0] = 1
-  }
-
-
-  for (let i = 1; i < m; i ++) {
-    for (let j = 1; j < n; j ++) {
-      dp[i][j] = dp[i][j-1] + dp[i-1][j]
+    for (let j = 0; j < n; j ++) {
+      if (i === 0) {
+        dp[i][j] = 1
+      }else if (j === 0) {
+        dp[i][j] = 1
+      }else {
+        dp[i][j] = dp[i][j-1] + dp[i-1][j]
+      }
+        
     }
   }
 
