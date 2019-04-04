@@ -54,7 +54,7 @@ var largestRectangleArea2 = function(heights) {
 
 
 let d1 = new Date()
-console.log(largestRectangleArea([2,1,5,6,2,3,5,6]))
+console.log(largestRectangleArea2([3, 1, 3, 2, 2 ]))
 let d2 = new Date()
 
 console.log(d2 - d1)
