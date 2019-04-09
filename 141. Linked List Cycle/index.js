@@ -31,12 +31,13 @@ var hasCycle = function (head) {
 
 
 var hasCycle2 = function (head) {
-  let f = head
-  let s = head.next
+  if (head === null || head.next === null) return false
+  let s = head
+  let f = head.next
   while (f != s) {
-    if (f === null || s === null) return false
-    f = f.next
-    s = s.next.next
+    if (f === null || f.next === null) return false
+    s = s.next
+    f = f.next.next
   }
 
   return true
