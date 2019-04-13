@@ -65,16 +65,10 @@ var reverseList2 = function(head) {
  * @return {ListNode}
  */
 var reverseList3 = function(head) {
- 
-  let prev = null
-  let curr = head
+  if (head === null || head.next === null) return head
 
-  while (curr) {
-    let tempNext = curr.next
-    curr.next = prev
-    prev = curr
-    curr = tempNext
-  }
-  
-  return prev
+  let p = reverseList3(head.next)
+  head.next.next = head
+  head.next = null
+  return p
 };
