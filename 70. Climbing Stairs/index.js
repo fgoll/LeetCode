@@ -18,7 +18,7 @@
  * @return {number}
  */
 var climbStairs = function(n) {
-  let count = 0
+
   let dp = [1, 1]
 
   for (let i = 2; i <= n; i ++) {
