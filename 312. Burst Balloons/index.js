@@ -39,6 +39,6 @@ var maxCoins = function(nums) {
       }
     }
   }
-
+  
   return dp[1][n]
 };
