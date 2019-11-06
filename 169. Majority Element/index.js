@@ -34,3 +34,4 @@ var majorityElement = function(nums) {
 
   return maj
 };
+console.log(majorityElement([1,1,1,1,2,2,2,0,3]))
