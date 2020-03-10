@@ -44,3 +44,46 @@ var maxEnvelopes = function(envelopes) {
 
   return max
 };
+
+
+
+function binSearch(nums, lo, hi, e) {
+
+  while (lo < hi) {
+    let mid = (lo + hi) >> 1
+    if (e <= nums[mid]) {
+        hi = mid
+    }else {
+        lo = mid + 1
+    } 
+  }
+
+  return lo
+}
+/**
+ * @param {number[][]} envelopes
+ * @return {number}
+ */
+var maxEnvelopes = function(envelopes) {
+  envelopes.sort((a, b) => {
+    if (a[0] === b[0]) {
+      return b[1] - a[1]
+    } else {
+      return a[0] - b[0]
+    }
+  })
+
+  let dp = [] 
+  let max = 0
+  for (let envelope of envelopes) {
+    let i = binSearch(dp, 0, max, envelope[1]);
+    if (i < 0) {
+        i = -(i + 1);
+    }
+    dp[i] = envelope[1];
+    if (i == max) {
+        max++;
+    }
+  }
+  return max
+};
