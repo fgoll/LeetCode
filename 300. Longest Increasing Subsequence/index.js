@@ -26,7 +26,7 @@ var lengthOfLIS = function (nums) {
   let max = 0
 
   for (let i = 0; i < nums.length; i++) {
-    dp[i] = 1
+    dp[i] = 1  // 表示到i位置的最长上升子序列
     for (let j = 0; j < i; j++) {
       if (nums[j] < nums[i]) {
         dp[i] = Math.max(dp[i], dp[j] + 1)
