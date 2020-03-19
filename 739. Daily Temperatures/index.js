@@ -58,3 +58,20 @@ var dailyTemperatures = function (T) {
 
   return res
 };
+
+var dailyTemperatures = function (T) {
+
+  
+  let res = [...Array(T.length)].map(_ => 0), stack = []
+
+  for (let i = 0; i < T.length; i ++) {
+
+    while (stack.length && T[i] > T[stack[stack.length - 1]]) {
+      res[stack[stack.length - 1]] = i - stack[stack.length - 1]
+      stack.pop()
+    }
+
+    stack.push(i)
+  }
+  return res
+};
