@@ -72,3 +72,19 @@ var reverseList3 = function(head) {
   head.next = null
   return p
 };
+
+var reverseList4 = function(head) {
+ 
+  let temp = new ListNode()
+  temp.next = head
+  let curr = temp.next
+
+  while (curr && curr.next) {
+    let next = curr.next
+    curr.next = next.next
+    next.next = temp.next
+    temp.next = next
+  }
+  
+  return temp.next
+};
