@@ -31,19 +31,19 @@ var maxSlidingWindow = function (nums, k) {
  */
 var maxSlidingWindow2 = function (nums, k) {
   let res = []
-  if (nums.length === 0) return res
-  let queue = []
-  for (let i = 0; i < nums.length; i ++) {
-    while (queue.length !== 0 && nums[i] > queue[queue.length - 1]) queue.pop()
-    queue.push(nums[i])
-    if (i - k + 1 >= 0) {
-      let max = queue[0]
-      res.push(max)
-      if (max === nums[i - k - 1]) {
-        queue.shift()
-      }
-    }
-  }
-
-  return res
-};
+   if (nums.length === 0) return res
+   let queue = []
+   for (let i = 0; i < nums.length; i ++) {
+     while (queue.length !== 0 && nums[i] > queue[queue.length - 1]) queue.pop()
+     queue.push(nums[i])
+     if (i - k + 1 >= 0) {
+       let max = queue[0]
+       res.push(max)
+       if (max === nums[i - k + 1]) {
+         queue.shift()
+       }
+     }
+   }
+ 
+   return res
+ };
