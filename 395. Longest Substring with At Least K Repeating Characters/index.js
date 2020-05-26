@@ -26,11 +26,12 @@
  * @return {number}
  */
 var longestSubstring = function(s, k) {
-  let counts = [...Array(26)].map(_ => 0)
 
   let i, j, max = 0, unique, noLessThanK
 
   for (let h = 1; h <= 26; h ++) {
+    let counts = [...Array(26)].map(_ => 0)
+      
     i = 0
     j = 0
     unique = 0
@@ -47,7 +48,7 @@ var longestSubstring = function(s, k) {
         } 
         j ++
       } else {
-        idx = s[j].charCodeAt(0) - 'a'.charCodeAt(0)
+        idx = s[i].charCodeAt(0) - 'a'.charCodeAt(0)
         if (counts[idx] === k) {
           noLessThanK --
         }
