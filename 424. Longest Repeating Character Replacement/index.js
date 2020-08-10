@@ -39,7 +39,6 @@ var characterReplacement = function(s, k) {
   const codeIndex = (c) => c.charCodeAt(0) - 'A'.charCodeAt(0)
   for (let end = 0; end < s.length; end ++) {
     maxCount = Math.max(maxCount, ++count[codeIndex(s[end])])
-      console.log(start, end, maxCount)
     if (end - start + 1 - maxCount > k) {
       count[codeIndex(s[start++])]--
     }
